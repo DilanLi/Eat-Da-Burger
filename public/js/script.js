@@ -22,19 +22,19 @@ $(document).ready(function() {
     });
 
     //when "eat it" button is clicked, updates "devoured" column for clicked burger in database
-    // $("#devour").on("click", function(event) {
+    $("#devour").on("click", function(event) {
 
-    //     event.preventDefault()
+        event.preventDefault()
         
-    //     $.ajax("/api/burgers/:id", {
-    //         type: "PUT",
-    //         data: 1
-    //     }).then(
-    //         function(){
-    //             location.reload();
-    //         }
-    //     )
-    //     });
+        $.ajax("/api/burgers/:id", {
+            type: "PUT",
+            data: 1
+        }).then(
+            function(){
+                location.reload();
+            }
+        )
+        });
 
 
 

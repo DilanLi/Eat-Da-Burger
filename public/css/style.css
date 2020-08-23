@@ -22,18 +22,21 @@ h1 {
 
 #not-eaten {
     margin-left: 10%;
+    float: left;
+    margin-top: 20px;
 }
 
 .devour {
-    float: left;
     margin-left: 15px;
-}
-
-span {
-    float: left;
 }
 
 .burger-name-text {
     margin-left: 10px;
 }
 
+#eaten {
+    margin-top: 20px;
+    float: right;
+    margin-right: 10%;
+    color: rgb(168, 167, 167);
+}

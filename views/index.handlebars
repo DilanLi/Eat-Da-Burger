@@ -13,7 +13,7 @@
 
 
 {{!-- burgers that haven't been eaten --}}
-<ul id="not-eatten">
+<ul id="not-eaten">
 {{#each burger_data }}
   {{#unless this.devoured}}
   <span>{{this.id}}.</span>
@@ -26,8 +26,15 @@
 
 
 {{!-- bugers that have been devoured --}}
-
-
+<ul id="eaten">
+{{#each burger_data }}
+  {{#if this.devoured}}
+  <span>{{this.id}}.</span>
+  <span class="burger-name-text">{{this.burger_name}}</span>
+  <br>
+  {{/if}}
+{{/each}}
+</ul>
 
 
 
