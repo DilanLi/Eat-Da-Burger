@@ -1,7 +1,35 @@
 <h1>Eat Da Burger!</h1>
 
-<ul>
+
+{{!-- order area --}}
+<form class="order-area">
+<img src="/images/burger.png" alt="burger-image">
+<p>Order Your Burger Here: </p>
+<textarea id="burger-name" name="burger-name" rows="4" cols="50"> </textarea>
+<br>
+<button type="button" id="submit">Make My Burger</button>
+</form>
+
+
+
+{{!-- burgers that haven't been eaten --}}
+<ul id="not-eatten">
 {{#each burger_data }}
-  <li>{{burger_name}}</li>
+  {{#unless this.devoured}}
+  <span>{{this.id}}.</span>
+  <span class="burger-name-text">{{this.burger_name}}</span>
+  <button type="button" class="devour">Eat It!</button>
+  <br>
+  {{/unless}}
 {{/each}}
 </ul>
+
+
+{{!-- bugers that have been devoured --}}
+
+
+
+
+
+
+

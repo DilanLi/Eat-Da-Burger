@@ -39,7 +39,7 @@ const orm = {
     },
 
     insertOne: function(table, cols, vals, cb){
-        let queryString = "INSERT INTO" + table;
+        let queryString = "INSERT INTO " + table;
 
         queryString += " (";
         queryString += cols.toString();
@@ -77,5 +77,7 @@ const orm = {
         });
     }
 }
+
+
 // Export the orm object for the model (cat.js).
 module.exports = orm;

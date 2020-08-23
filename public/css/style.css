@@ -1,11 +1,39 @@
 body {
     background-color: #ffd6ef;
     margin-top: 40px;
+    font-family: "Indie Flower";
+    font-size: larger;
 }
 
 h1 {
     text-align: center;
-    color: #04b586;
-    font-family: "Indie Flower";
+    color: #01916a;
+}
+
+.order-area {
+    margin: 0 auto;
+    width: 500px;
+    text-align: center;
+}
+
+#submit {
+    margin-top: 20px;
+}
+
+#not-eaten {
+    margin-left: 10%;
+}
+
+.devour {
+    float: left;
+    margin-left: 15px;
+}
+
+span {
+    float: left;
+}
+
+.burger-name-text {
+    margin-left: 10px;
 }
 
