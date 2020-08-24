@@ -22,23 +22,18 @@ $(document).ready(function() {
     });
 
     //when "eat it" button is clicked, updates "devoured" column for clicked burger in database
-    $("#devour").on("click", function(event) {
-
-        event.preventDefault()
+    $(".devour").on("click", function(event) {
         
-        $.ajax("/api/burgers/:id", {
+        event.preventDefault()
+  
+        const id = $(this).prev().prev()[0].innerHTML;
+        $.ajax("/api/burgers/" + id, {
             type: "PUT",
-            data: 1
         }).then(
             function(){
                 location.reload();
             }
         )
         });
-
-
-
-
-
 
   });

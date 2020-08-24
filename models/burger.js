@@ -16,12 +16,11 @@ const burger = {
         ], cb)
     },
 
-    updateOne: function(id, cb) {
-        var condition = "id=" + id;
-        orm.update("burgers", {
-          devoured: true
-        }, condition, cb);
-      }
+    updateOne: function(objColVals, condition, cb) {
+    orm.updateOne("burgers", objColVals, condition, function(res){
+        cb(res)
+    })
+}
 }
 
 module.exports = burger;
