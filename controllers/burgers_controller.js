@@ -13,7 +13,6 @@ router.post("/api/burgers", function (req, res) {
     console.log("req.body: " + req.body.burger_name + " req.devoured: " + req.body.devoured);
     burger.insertOne(req.body.burger_name, req.body.devoured, function (result) {
         res.json({ id: result.insertId });
-        console.log(res)
     });
 })
 
