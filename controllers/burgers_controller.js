@@ -10,13 +10,14 @@ router.get("/", function (req, res) {
 })
 
 router.post("/api/burgers", function (req, res) {
-    console.log("req.body: " + req.body.burger_name + " req.devoured: " + req.body.devoured);
-    burger.insertOne(req.body.burger_name, req.body.devoured, function (result) {
+    // console.log("req.body: " + req.body.burger_name + " req.devoured: " + req.body.devoured);
+    burger.insertOne(["burger_name", "devoured"], [req.body.burger_name, req.body.devoured], function (result) {
         res.json({ id: result.insertId });
     });
 })
 
 router.put("/api/burgers/:id", function (req, res) {
+    // console.log(req.params)
    var condition = "id = " + req.params.id
     
     burger.updateOne({

@@ -1,7 +1,7 @@
 // Import MySQL connection.
 var connection = require("../config/connection.js");
 
-
+//helper function for SQL syntax, ex) ["?", "?", "?"].toString() => "?,?,?"
 function printQuestionMarks(num) {
     var arr = [];
   
@@ -12,6 +12,7 @@ function printQuestionMarks(num) {
     return arr.toString();
   }
   
+// Helper function to convert object key/value pairs to SQL syntax
   function objToSql(ob) {
     var arr = [];
     for (var key in ob) {
@@ -20,6 +21,8 @@ function printQuestionMarks(num) {
         if (typeof value === "string" && value.indexOf(" ") >= 0) {
           value = "'" + value + "'";
         }
+      // e.g. {name: 'Lana Del Grey'} => ["name='Lana Del Grey'"]
+      // e.g. {sleepy: true} => ["sleepy=true"]
         arr.push(key + "=" + value);
       }
     }
